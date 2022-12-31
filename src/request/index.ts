@@ -11,7 +11,6 @@ const service = axios.create({
 		'X-Requested-With': 'XMLHttpRequest',
 	},
 })
-
 // 添加请求拦截器
 service.interceptors.request.use(
 	function (config) {
