@@ -21,7 +21,7 @@
       :url="urlSend"
       :muted="data.muted"
       :autoplay="data.autoplay"
-      :loop="false"
+      :loop="true"
       type="progress"
       @forward="forward"
       @fastBack="fastBack"
@@ -111,7 +111,7 @@
     param.append("val_flag",val_flag);
     //调用方法
     proxy.$http
-      .post("http://polaris.lyyfsq.club:8083/getPaging",param)
+      .post("http://127.0.0.1:8083/getPaging",param)
       .then(function(res:any):void {
         console.log(res.data);
         menuList.value = res.data;
@@ -127,7 +127,7 @@
     param.append("val_flag","1");
     //调用方法
     proxy.$http
-      .post("http://polaris.lyyfsq.club:8083/getPaging",param)
+      .post("http://127.0.0.1:8083/getPaging",param)
       .then(function(res:any):void {
         console.log(res.data);
         menuList.value = res.data;
@@ -143,7 +143,7 @@
     data.autoplay = false;
     console.log(n);
     urlSend.value = "";
-    urlSend.value = urlSend.value + "http://polaris.lyyfsq.club:8083/music?musicName=" + n;
+    urlSend.value = urlSend.value + "http://127.0.0.1:8083/music?musicName=" + n;
     console.log(urlSend.value);
     // (audioRef.value as any).load();
     // (audioRef.value as any).play();
