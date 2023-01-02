@@ -10,7 +10,7 @@
         </nut-searchbar>
         <div>
         <p v-for=" i in music" @click="sendIdTo(i.name)">
-          <div v-if="typeof(i.id) != 'number' && i.id != 0 && Number.isInteger(i.id) && i.name !== '' ">
+          <div v-if="i.id != 0 && i.id != null && i.name !== '' && i.author != ''">
               {{i.id}}--{{i.name}}----{{i.author}}
           </div>
           <div v-else>
