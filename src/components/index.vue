@@ -38,6 +38,9 @@
         </div>
       </nut-audio>
       </main>
+      <nut-animate type='twinkle' :loop='true'>
+        <nut-button type='primary'>点击列表中的歌曲名字开始播放</nut-button>
+      </nut-animate>
     </div>
   </template>
   
@@ -81,6 +84,9 @@
     }]);
     let playOrnot = ref(false);
     // 
+    function alertTitle():void{
+        alert("点击列表中的歌曲名字开始播放");
+    }
     let bURL = "http://127.0.0.1:8083";
     let realURL = "http://polaris.lyyfsq.club:8083";
     function pageChange(value: number):void {

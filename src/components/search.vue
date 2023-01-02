@@ -9,7 +9,14 @@
               </template>
         </nut-searchbar>
         <div>
-            <p v-for=" i in music" @click="sendIdTo(i.name)">{{i.id}}--{{i.name}}----{{i.author}}</p>
+        <p v-for=" i in music" @click="sendIdTo(i.name)">
+          <div v-if="typeof(i.id) != 'number' && i.id != 0 && Number.isInteger(i.id) && i.name !== '' ">
+              {{i.id}}--{{i.name}}----{{i.author}}
+          </div>
+          <div v-else>
+            无数据
+          </div>
+        </p>
         </div>
         <nut-audio
         :url="urlSend"
@@ -32,6 +39,18 @@
           <nut-audio-operate type="forward"><nut-icon name="play-double-forward" size="35"></nut-icon></nut-audio-operate>
         </div>
       </nut-audio>
+      <nut-noticebar
+          text="在输入框中输入歌名，点击右侧的搜索完成查询"
+          :scrollable="true"
+          :background="`rgba(251, 248, 220, 1)`"
+          :color="`#D9500B`"
+      ></nut-noticebar>
+      <nut-animate type='jump' :loop='true'>
+        更多内容在持续更新~
+      </nut-animate>
+      <nut-animate class="foot" type='flicker' :loop='true'>
+        
+      </nut-animate>
         <!-- <Progress></Progress> -->
     </div>    
 </template>
@@ -65,6 +84,9 @@
         proxy.$http.post(realURL+"/searchMusic",param)
         .then((resp)=>{
             music.value = resp.data;
+            for (let i in music) {
+              console.log(i);
+            }
         })
         .catch(function(error:any) {
           console.log(error);
@@ -120,5 +142,8 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+    }
+    .foot{
+      margin-top: 12%;
     }
 </style>
