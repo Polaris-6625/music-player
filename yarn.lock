@@ -17,6 +17,11 @@
   resolved "https://registry.npmmirror.com/@esbuild/linux-loong64/-/linux-loong64-0.15.18.tgz#128b76ecb9be48b60cf5cfc1c63a4f00691a3239"
   integrity sha512-L4jVKS82XVhw2nvzLg/19ClLWg0y27ulRwuP7lcyL6AbUWB5aPglXY3M21mauDQMDfRLs8cQmeT03r/+X3cZYQ==
 
+"@nutui/icons-vue@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.npmmirror.com/@nutui/icons-vue/-/icons-vue-0.0.26.tgz#ebec9f75c596c9fb80d1580fac4c66ecd05122cb"
+  integrity sha512-BbTjfTshqszF7MpLarDldLLRs8f3xH6f/s+JB0METi09G78jJuQnZzGI7iEklWy7BS/ZFXud8S3a/1RAUbiKCA==
+
 "@nutui/nutui@^3.3.1":
   version "3.3.6"
   resolved "https://registry.npmmirror.com/@nutui/nutui/-/nutui-3.3.6.tgz#ae45f505c71d06142a902f3086e7079f40098d17"
@@ -116,7 +121,7 @@
     "@vue/compiler-dom" "3.2.47"
     "@vue/shared" "3.2.47"
 
-"@vue/devtools-api@^6.4.5":
+"@vue/devtools-api@^6.0.0-beta.18", "@vue/devtools-api@^6.4.5":
   version "6.5.0"
   resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.5.0.tgz#98b99425edee70b4c992692628fa1ea2c1e57d07"
   integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
@@ -532,6 +537,21 @@ picomatch@^2.0.4, picomatch@^2.2.1:
   resolved "https://registry.npmmirror.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
+pinia-plugin-persist@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmmirror.com/pinia-plugin-persist/-/pinia-plugin-persist-1.0.0.tgz#fc696f225527f30bd5955109fafadd43c725e888"
+  integrity sha512-M4hBBd8fz/GgNmUPaaUsC29y1M09lqbXrMAHcusVoU8xlQi1TqgkWnnhvMikZwr7Le/hVyMx8KUcumGGrR6GVw==
+  dependencies:
+    vue-demi "^0.12.1"
+
+pinia@^2.0.0-rc.10:
+  version "2.0.0-rc.10"
+  resolved "https://registry.npmmirror.com/pinia/-/pinia-2.0.0-rc.10.tgz#81e823931897a4cf5c53c113d0c0e63b7bba9973"
+  integrity sha512-WY0KQoHxSBylhGc6aBQKPFfAupYHWpI1QBQKJSyK9btwwMTVQpwCdePgPho+ZoEMl832jb7RwfI5TN1srV5VEA==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.18"
+    vue-demi "*"
+
 postcss@^8.1.10, postcss@^8.4.18:
   version "8.4.21"
   resolved "https://registry.npmmirror.com/postcss/-/postcss-8.4.21.tgz#c639b719a57efc3187b13a1d765675485f4134f4"
@@ -626,6 +646,16 @@ vue-axios@^3.5.2:
   version "3.5.2"
   resolved "https://registry.npmmirror.com/vue-axios/-/vue-axios-3.5.2.tgz#28637524cca550a9e97197e85a41930ec63604d5"
   integrity sha512-GP+dct7UlAWkl1qoP3ppw0z6jcSua5/IrMpjB5O8bh089iIiJ+hdxPYH2NPEpajlYgkW5EVMP95ttXWdas1O0g==
+
+vue-demi@*:
+  version "0.13.11"
+  resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"
+  integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==
+
+vue-demi@^0.12.1:
+  version "0.12.5"
+  resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.12.5.tgz#8eeed566a7d86eb090209a11723f887d28aeb2d1"
+  integrity sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==
 
 vue-router@^4.1.6:
   version "4.1.6"

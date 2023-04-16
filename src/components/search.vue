@@ -1,7 +1,7 @@
 <template>
     <div class="Main">
         <h1>查询页面</h1>
-        <nut-searchbar v-model="searchValue" background="linear-gradient(to right, #9866F0, #EB4D50)" input-background="#fff"> 
+        <nut-searchbar v-model="searchValue" background="linear-gradient(to right, #9866F0, #EB4D50)" input-background="#fff">
             <template v-slot:rightout>
                 <nut-button plain  type="primary" @click="searchList(searchValue)">
                     搜索
@@ -49,15 +49,17 @@
         更多内容在持续更新~
       </nut-animate>
       <nut-animate class="foot" type='flicker' :loop='true'>
-        
+
       </nut-animate>
         <!-- <Progress></Progress> -->
-    </div>    
+    </div>
 </template>
+
 <script lang="ts" setup>
-    import { ref , toRefs, reactive , Ref } from 'vue';
+    import { ref , toRefs , reactive , Ref } from 'vue';
     import useCurrentInstance from '../useCurrentInstance';
     import  Progress  from './Progress.vue';
+    console.log("特殊");
     let { proxy } = useCurrentInstance();
     let searchValue:Ref<string> = ref("");
     let bURL = "http://127.0.0.1:8084";
@@ -73,7 +75,7 @@
         id:null,
         name:'',
         author:''
-    }]); 
+    }]);
     const data = reactive({
         muted: false,
         autoplay: false
@@ -93,34 +95,34 @@
         });
     }
 
-    // 
+    //
     const playing = ref(false);
-  
+
     const fastBack = () => {
         console.log('倒退');
       };
-  
+
       const forward = (progress:any) => {
         console.log('快进', '当前时间' + progress);
       };
-  
+
       const changeStatus = (status:any) => {
         console.log('当前播放状态', status);
         playing.value = status;
         data.autoplay = false;
       };
-  
+
       const ended = () => {
         console.log('播放结束');
       };
-  
+
       const changeProgress = (val:any) => {
         console.log('改变进度条', val);
       };
-    // 
-    
+    //
+
     let urlSend:Ref<string> = ref("");
-    let audioRef = ref(null)
+    let audioRef = ref(null);
     function sendIdTo(n:string|undefined):void {
       data.autoplay = false;
       console.log(n);
@@ -135,7 +137,7 @@
       data.autoplay = true;
     }
 </script>
-  
+
 <style scoped>
     .Main {
         text-align: center;

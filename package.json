@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nutui/icons-vue": "^0.0.26",
     "@nutui/nutui": "^3.3.1",
     "axios": "^1.2.1",
+    "pinia": "^2.0.0-rc.10",
+    "pinia-plugin-persist": "^1.0.0",
     "vue": "^3.2.41",
     "vue-axios": "^3.5.2",
     "vue-router": "^4.1.6"

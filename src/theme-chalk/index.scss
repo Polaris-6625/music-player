@@ -1,0 +1,13 @@
+@mixin baseSizeFunction($w,$h) {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: $w;
+  height: $h;
+  box-shadow: $h * 0.02 $h * 0.02 grey;
+}
+@mixin containFunction() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

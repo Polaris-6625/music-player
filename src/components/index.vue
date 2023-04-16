@@ -9,7 +9,7 @@
       <main>
         <div>
           <h3>音乐列表</h3>
-          <p v-for="it in menuList" @click="sendIdTo(it.name)">
+          <p class="songTitle" v-for="it in menuList" @click="sendIdTo(it.name)">
             {{it.id}}-{{it.name}}----{{it.author}}
           </p>
         </div>
@@ -43,8 +43,8 @@
       </nut-animate>
     </div>
   </template>
-  
-  <style scoped>
+
+  <style scoped lang="scss">
     .main {
       display: flex;
       justify-content: center;
@@ -52,6 +52,9 @@
       height: 100%;
       width: 100%;
       text-align: center;
+    }
+    .songTitle:hover {
+      cursor: pointer;
     }
     .page_index {
       text-align: center;
@@ -62,7 +65,7 @@
       font-family: cursive;
     }
   </style>
-  
+
   <script setup lang="ts">
     import { ref , reactive ,  getCurrentInstance , onBeforeMount , ComponentInternalInstance , Ref } from "vue";
     import useCurrentInstance from '../useCurrentInstance';
@@ -83,7 +86,7 @@
         author:''
     }]);
     let playOrnot = ref(false);
-    // 
+    //
     function alertTitle():void{
         alert("点击列表中的歌曲名字开始播放");
     }
@@ -93,29 +96,29 @@
       console.log(value);
     }
     const playing = ref(false);
-  
+
     const fastBack = () => {
         console.log('倒退');
   };
-  
+
       const forward = (progress:any) => {
         console.log('快进', '当前时间' + progress);
       };
-  
+
       const changeStatus = (status:any) => {
         console.log('当前播放状态', status);
         playing.value = status;
         data.autoplay = false;
       };
-  
+
       const ended = () => {
         console.log('播放结束');
       };
-  
+
       const changeProgress = (val:any) => {
         console.log('改变进度条', val);
       };
-    // 
+    //
     function changePaging(value:number):void {
       // proxy.defaults.withCredentials = true;
       let val_flag = value.toString();
@@ -164,5 +167,5 @@
       changeStatus(true);
       data.autoplay = true;
     }
-    
+
   </script>

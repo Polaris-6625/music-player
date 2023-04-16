@@ -13,12 +13,11 @@
         <nut-tabpane title="我的"> </nut-tabpane>
       </nut-tabs>
     </template>
-  
+
       <template #right>
         <nut-icon class="right" name="more-x"></nut-icon>
       </template>
     </nut-navbar>
-    <router-view></router-view>
 </template>
 
 <!-- <style scoped>
@@ -26,7 +25,7 @@
         font-size: 24px;
     }
 </style> -->
-  
+
 <script lang="ts">
   import { ref, onBeforeMount } from 'vue';
   import Content from './content.vue';
@@ -63,12 +62,16 @@
           else if(tab1value.value == 2) {
             router.push("/communicate");
           }
-          else {
-            router.push("/My");
+          else if(tab1value.value == 3) {
+            console.log("我的");
+            router.push("/MyInf");
           }
+          // else {
+          //   router.push("/MyInf");
+          // }
         },
       };
-  
+
       return {
         tab1value,
         ...methods
@@ -76,4 +79,3 @@
     }
   }
 </script>
-  
