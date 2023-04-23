@@ -1,12 +1,12 @@
 <template>
-  <nut-cell title="陈时" desc="用户中心">
+  <nut-cell :title="root.value" desc="用户账号">
     <template v-slot:icon>
 <!--      <img-->
 <!--          style="width:50px;height: 50px;"-->
 <!--          src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png"-->
 <!--      />-->
-      <nut-avatar>陈时</nut-avatar>
-    </template>
+      <nut-avatar>{{ username.value }}</nut-avatar>
+    </template>realURL
   </nut-cell>
   <nut-cell class="hover" title="我的点赞" desc="前往我的点赞记录" @click="changeRouter('/MyInf/MyPraise')">
     <template v-slot:icon>
@@ -69,10 +69,21 @@ export default defineComponent({
   </script>
 
 <script setup lang="ts">
-// import { useRouter } from 'vue-router';
-
-// const router = useRouter();
+import { useRouter } from 'vue-router';
+import useCurrentInstance from "../useCurrentInstance";
+import {onBeforeMount, ref} from "vue";
+import {useStore} from "../state/store";
+let { proxy } = useCurrentInstance();
+const router = useRouter();
+let Infs = ref([]);
+let root = ref("null");
+let username = ref("null");
+let store = useStore();
 function changeRouter(path:any):void {
   router.push(path);
 }
+onBeforeMount(()=>{
+  root.value = store.root;
+  username.value = store.username;
+})
 </script>

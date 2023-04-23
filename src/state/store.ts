@@ -7,13 +7,17 @@ export const useStore = defineStore({
     // state: 返回对象的函数
     state: ()=> ({
         token: "",
-        permissions:""
+        permissions:"",
+        root:"",
+        username:""
     }),
     persist: {
         enabled: true,
         strategies: [
             { storage: localStorage, paths: ['token'] },
             { storage: localStorage, paths: ['permissions'] },
+            { storage: localStorage, paths: ['root'] },
+            { storage: localStorage, paths: ['username'] }
         ],
     },
     getters: {
@@ -30,6 +34,12 @@ export const useStore = defineStore({
         },
         changePermissions(permissions:string) {
             this.permissions = permissions;
+        },
+        changeRoot(root:string) {
+            this.root = root;
+        },
+        changeUsername(username:string) {
+            this.username = username;
         }
     }
 });

@@ -1,3 +1,4 @@
+// @ts-nocheck
 <template>
   <div class="Main">
     <h1>登录</h1>
@@ -8,8 +9,8 @@
       <nut-form-item label="密码" required="true">
         <nut-input v-model="password"  class="nut-input-text" placeholder="请输入密码" type="text" />
       </nut-form-item>
-      <img class="image_Captcha" src="http://127.0.0.1:8085/getLoginCaptcha" alt="登录验证码图片">
-      <nut-form-item label="验证码" required="true">
+      <img class="image_Captcha" src="http://polaris.lyyfsq.club:8085/getLoginCaptcha" alt="登录验证码图片">
+      <nut-form-item label="验证码" required=true>
         <nut-input v-model="Captcha"  class="nut-input-text" placeholder="请输入验证码" type="text" />
       </nut-form-item>
       <nut-button type="primary" @click="Login">登录</nut-button>
@@ -18,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+// @ts-nocheck
   import { ref } from "vue";
   import useCurrentInstance from "../useCurrentInstance";
   import {useRouter} from "vue-router";
@@ -30,7 +32,7 @@
   let password = ref("");
   let Captcha = ref("");
   const demoURL = "http://127.0.0.1:8085";
-  const realURL = "http://polaris.lyyfsq.clyb:8085";
+  const realURL = "http://polaris.lyyfsq.club:8085";
   function Login():void {
     let params = new URLSearchParams();
     params.append("root",root.value);
@@ -39,11 +41,13 @@
     console.log(params);
     proxy
         .$http
-          .post(demoURL+"/Login",params)
+          .post(realURL+"/Login",params)
             .then((resp:any)=>{
               console.log(resp.data);
               if (resp.data !== "failed" && resp.data !== "") {
-                store.changeToken(resp.data);
+                store.changeToken(resp.data.token);
+                store.changeRoot(resp.data.root);
+                store.changeUsername(resp.data.username);
                 alert("登陆成功");
                 router.push("/MyInf");
               }
@@ -56,13 +60,16 @@
 
 <style scoped lang="scss">
 @import "../theme-chalk/index.scss";
-.contain {
-  @include containFunction();
-}
-.Main {
-  @include baseSizeFunction(65vw,35vh);
-}
-.image_Captcha {
-  @include baseSizeFunction(6vw,8vh);
+@import "../theme-chalk/Login.scss";
+@media screen and (min-width: 1000px) {
+  .contain {
+    @include containFunction();
+  }
+  .Main {
+    @include baseSizeFunction(65vw,35vh);
+  }
+  .image_Captcha {
+    @include baseSizeFunction(6vw,8vh);
+  }
 }
 </style>

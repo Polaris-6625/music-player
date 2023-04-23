@@ -1,0 +1,19 @@
+@media screen and (min-width: 0) and (max-width: 1000px){
+  .page_index {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .main {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //overflow: scroll;
+    overflow-x: hidden;
+  }
+  .ChatBox {
+    margin-bottom: 1%;
+  }
+}

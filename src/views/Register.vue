@@ -1,3 +1,4 @@
+// @ts-nocheck
 <template>
   <div class="Main">
     <h1>注册</h1>
@@ -26,6 +27,7 @@
 </template>
 
 <script setup lang="ts">
+// @ts-nocheck
 import {ref} from "vue";
 let username = ref("");
 let root = ref("");

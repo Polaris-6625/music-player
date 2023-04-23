@@ -1,0 +1,13 @@
+@import "../theme-chalk/index.scss";
+@media screen and (min-width: 0) and (max-width: 1000px) {
+  .contain {
+    @include containFunction();
+  }
+  .Main {
+    @include baseSizeFunction(65vw,80vh);
+    box-shadow: none;
+  }
+  .image_Captcha {
+    @include baseSizeFunction(30vw,8vh);
+  }
+}

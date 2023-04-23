@@ -11,6 +11,7 @@ import Certification from './components/Certification.vue';
 import MyHistory from  './components/MyHistory.vue';
 import MyPraise from './components/MyPraise.vue';
 import musicPush from "./components/MusicPush.vue";
+import AddChat from './components/AddChat.vue';
 
 interface Router {
     path:string;
@@ -65,6 +66,10 @@ const routes:Array<Router> = [
     {
         path:"/MyInf/Certification",
         component:Certification
+    },
+    {
+        path:"/Communication/AddChat",
+        component:AddChat
     }
 ];
 
