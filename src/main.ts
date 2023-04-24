@@ -5,7 +5,7 @@ import App from './App.vue'
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 import NutUI from "@nutui/nutui";
-import Menu from "./components/Menu.vue";
+import Menu from "./views/Menu.vue";
 import router from './router';
 import { createPinia, PiniaPluginContext, PiniaPlugin } from 'pinia'
 import { Icon } from '@nutui/nutui';

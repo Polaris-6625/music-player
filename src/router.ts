@@ -1,16 +1,16 @@
 import {createRouter , createWebHashHistory} from 'vue-router';
-import Index from './components/index.vue';
-import Search from './components/search.vue';
-import  MyInf from './components/MyInf.vue';
+import Index from './views/index.vue';
+import Search from './views/search.vue';
+import  MyInf from './views/MyInf.vue';
 import baseIndex from './views/index.vue';
 import Login from "./views/Login.vue";
 import Register from './views/Register.vue';
-import Communication from './components/Communication.vue';
+import Communication from './views/Communication.vue';
 import Demo from './components/Demo.vue';
-import Certification from './components/Certification.vue';
-import MyHistory from  './components/MyHistory.vue';
-import MyPraise from './components/MyPraise.vue';
-import musicPush from "./components/MusicPush.vue";
+import Certification from './views/Certification.vue';
+import MyHistory from './views/MyHistory.vue';
+import MyPraise from './views/MyPraise.vue';
+import musicPush from "./views/MusicPush.vue";
 import AddChat from './components/AddChat.vue';
 
 interface Router {

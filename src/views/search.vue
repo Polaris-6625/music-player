@@ -58,7 +58,7 @@
 <script lang="ts" setup>
     import { ref , toRefs , reactive , Ref } from 'vue';
     import useCurrentInstance from '../useCurrentInstance';
-    import  Progress  from './Progress.vue';
+    import  Progress  from '../components/Progress.vue';
     console.log("特殊");
     let { proxy } = useCurrentInstance();
     let searchValue:Ref<string> = ref("");

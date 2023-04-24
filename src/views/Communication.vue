@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 // @ts-nocheck
-import ChatBox from "./ChatBox.vue";
+import ChatBox from "../components/ChatBox.vue";
 import useCurrentInstance from "../useCurrentInstance";
 import {onBeforeMount, ref} from "vue";
 import Create from "./Create.vue";

@@ -28,7 +28,7 @@
 
 <script lang="ts">
   import { ref, onBeforeMount } from 'vue';
-  import Content from './content.vue';
+  import Content from '../components/content.vue';
   import { useRouter, useRoute } from 'vue-router'
   export default {
     components:{
