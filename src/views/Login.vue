@@ -9,7 +9,7 @@
       <nut-form-item label="密码" required="true">
         <nut-input v-model="password"  class="nut-input-text" placeholder="请输入密码" type="text" />
       </nut-form-item>
-      <img class="image_Captcha" src="http://polaris.lyyfsq.club:8085/getLoginCaptcha" alt="登录验证码图片">
+      <img class="image_Captcha" src="http://127.0.0.1:8085/getLoginCaptcha" alt="登录验证码图片">
       <nut-form-item label="验证码" required=true>
         <nut-input v-model="Captcha"  class="nut-input-text" placeholder="请输入验证码" type="text" />
       </nut-form-item>
@@ -41,7 +41,7 @@
     console.log(params);
     proxy
         .$http
-          .post(realURL+"/Login",params)
+          .post(demoURL+"/Login",params)
             .then((resp:any)=>{
               console.log(resp.data);
               if (resp.data !== "failed" && resp.data !== "") {

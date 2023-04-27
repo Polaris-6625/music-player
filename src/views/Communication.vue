@@ -32,7 +32,7 @@ let flag = 2;
 onBeforeMount(()=>{
   let param = new URLSearchParams();
   param.append("val_flag","1");
-  proxy.$http.post(realURL+"/daily",param).then((resp)=>{
+  proxy.$http.post(bURL+"/daily",param).then((resp)=>{
     ChatBoxs.value = resp.data;
     console.log(ChatBoxs)
   })

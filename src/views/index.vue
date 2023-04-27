@@ -126,7 +126,7 @@
       param.append("val_flag",val_flag);
       //调用方法
       proxy.$http
-        .post(realURL+"/getPaging",param)
+        .post(bURL+"/getPaging",param)
         .then(function(res:any):void {
           console.log(res.data);
           menuList.value = res.data;
@@ -142,7 +142,7 @@
       param.append("val_flag","1");
       //调用方法
       proxy.$http
-        .post(realURL+"/getPaging",param)
+        .post(bURL+"/getPaging",param)
         .then(function(res:any):void {
           console.log(res.data);
           menuList.value = res.data;
@@ -158,7 +158,7 @@
       data.autoplay = false;
       console.log(n);
       urlSend.value = "";
-      urlSend.value = urlSend.value + realURL + "/music?musicName=" + n;
+      urlSend.value = urlSend.value + bURL + "/music?musicName=" + n;
       console.log(urlSend.value);
       // (audioRef.value as any).load();
       // (audioRef.value as any).play();

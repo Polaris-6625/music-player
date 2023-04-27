@@ -83,7 +83,7 @@
     function searchList(flag:string):void{
         let param = new URLSearchParams();
         param.append("flag",flag);
-        proxy.$http.post(realURL+"/searchMusic",param)
+        proxy.$http.post(bURL+"/searchMusic",param)
         .then((resp)=>{
             music.value = resp.data;
             for (let i in music) {
@@ -127,7 +127,7 @@
       data.autoplay = false;
       console.log(n);
       urlSend.value = "";
-      urlSend.value = urlSend.value + realURL_2 + "/music?musicName=" + n;
+      urlSend.value = urlSend.value + bUR_2 + "/music?musicName=" + n;
       console.log(urlSend.value);
       // (audioRef.value as any).load();
       // (audioRef.value as any).play();
