@@ -3,9 +3,9 @@
     <div class="head">
       <nut-avatar style="margin-top: 3%" size="small" class="avatar">
 <!--        <img src="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />-->
-        {{props.ChatBox_username}}
+        {{ props.ChatBox_username }}
       </nut-avatar>
-      <h3 class="username">{{props.ChatBox_username}}</h3>
+      <h3 class="username">{{ props.ChatBox_username }}</h3>
     </div>
     <div class="content">
       <nut-textarea readonly v-model="props.ChatBox_content"/>
@@ -15,7 +15,7 @@
       <nut-icon class="message" name="message" size="large" style="margin-top: 1%"></nut-icon>
       <div class="fabulous">
         <nut-icon name="fabulous" size="large" olor="#FF4A4F" style="margin-top: 1%"></nut-icon>
-        {{props.ChatBox_praise}}
+        {{ props.ChatBox_praise }}
       </div>
 
     </div>
